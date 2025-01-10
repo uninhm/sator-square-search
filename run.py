@@ -39,6 +39,7 @@ with open('words.txt', 'r') as f:
             words2.append(word)
     words = words2
 
+count = 0
 for word1 in double_search(words, '', ''):
     for word2 in double_search(words, word1[1], word1[3]):
         for word3 in double_search(words, word1[2]+word2[2], word2[2]+word1[2]):
@@ -48,3 +49,5 @@ for word1 in double_search(words, '', ''):
             print(word2[::-1])
             print(word1[::-1])
             print()
+            count += 1
+print(count)
