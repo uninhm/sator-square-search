@@ -1,10 +1,10 @@
 def binary_search(lst, prefix): # a.k.a. lower bound
     low = 0
     high = len(lst) - 1
-    while low <= high-1:
+    while low <= high:
         mid = (low + high) // 2
         if lst[mid] > prefix:
-            high = mid
+            high = mid - 1
         elif lst[mid] < prefix:
             low = mid + 1
         else:
